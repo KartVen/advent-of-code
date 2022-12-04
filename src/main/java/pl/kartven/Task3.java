@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class Task3 {
 
-    public static void main() throws IOException {
+    public static void main(String[] args) throws IOException {
         BufferedReader file = new BufferedReader(new FileReader("src/main/resources/task3.txt"));
         List<String> content = new ArrayList<>();
         String ln; while ((ln = file.readLine()) != null) content.add(ln);
@@ -18,14 +18,14 @@ public class Task3 {
     }
 
 
-    private static void part1(List<String> content) throws IOException {
+    private static void part1(List<String> content) {
 
         int summedPrior = 0;
 
         for (String ln : content) {
             int len = ln.length() / 2;
             Set<Character> first = ln.substring(0, len).chars().mapToObj(e -> (char) e).collect(Collectors.toSet());
-            Set<Character> second = ln.substring(len, ln.length()).chars().mapToObj(e -> (char) e).collect(Collectors.toSet());
+            Set<Character> second = ln.substring(len).chars().mapToObj(e -> (char) e).collect(Collectors.toSet());
             for (Character letter : first) {
                 if (second.contains(letter)) {
                     if (letter >= 'a' && letter <= 'z') {
@@ -39,7 +39,7 @@ public class Task3 {
         System.out.println(summedPrior);
     }
 
-    private static void part2(List<String> content) throws IOException {
+    private static void part2(List<String> content) {
 
         int summedPrior = 0;
         List<Set<Character>> rugsackGroup = new ArrayList<>();

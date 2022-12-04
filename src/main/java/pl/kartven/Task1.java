@@ -1,16 +1,13 @@
 package pl.kartven;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
 public class Task1 {
 
-    public static void main() throws IOException {
+    public static void main(String[] args) throws IOException {
         BufferedReader file = new BufferedReader(new FileReader("src/main/resources/task1.txt"));
 
         ArrayList<Integer> elfFeed = new ArrayList<>();

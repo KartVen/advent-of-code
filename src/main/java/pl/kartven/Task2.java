@@ -1,14 +1,15 @@
 package pl.kartven;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class Task2 {
 
-    public static void main() throws IOException {
+    public static void main(String[] args) throws IOException {
         BufferedReader file = new BufferedReader(new FileReader("src/main/resources/task2.txt"));
         List<String> content = new ArrayList<>();
         String ln; while ((ln = file.readLine()) != null) content.add(ln);
@@ -19,7 +20,7 @@ public class Task2 {
         file.close();
     }
 
-    private static void part1(List<String> content) throws IOException {
+    private static void part1(List<String> content) {
 
         HashMap<String, Integer> shapeVal = new HashMap<>() {{
             put("X", 1); //rock
@@ -68,7 +69,7 @@ public class Task2 {
         System.out.println(sum);
     }
 
-    private static void part2(List<String> content) throws IOException {
+    private static void part2(List<String> content) {
 
         HashMap<String, Integer> shapeVal = new HashMap<>() {{
             put("X", 1); //rock
