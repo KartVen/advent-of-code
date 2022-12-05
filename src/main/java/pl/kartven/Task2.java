@@ -9,10 +9,23 @@ import java.util.List;
 
 public class Task2 {
 
+    private final static HashMap<String, Integer> shapeVal = new HashMap<>() {{
+        put("X", 1); //rock
+        put("Y", 2); //paper
+        put("Z", 3); //scissors
+    }};
+
+    private final static HashMap<String, String> comparer = new HashMap<>() {{
+        put("A", "X"); //rock
+        put("B", "Y"); //paper
+        put("C", "Z"); //scissors
+    }};
+
     public static void main(String[] args) throws IOException {
         BufferedReader file = new BufferedReader(new FileReader("src/main/resources/task2.txt"));
         List<String> content = new ArrayList<>();
-        String ln; while ((ln = file.readLine()) != null) content.add(ln);
+        String ln;
+        while ((ln = file.readLine()) != null) content.add(ln);
 
         part1(content);
         part2(content);
@@ -21,19 +34,6 @@ public class Task2 {
     }
 
     private static void part1(List<String> content) {
-
-        HashMap<String, Integer> shapeVal = new HashMap<>() {{
-            put("X", 1); //rock
-            put("Y", 2); //paper
-            put("Z", 3); //scissors
-        }};
-
-        HashMap<String, String> comparer = new HashMap<>() {{
-            put("A", "X"); //rock
-            put("B", "Y"); //paper
-            put("C", "Z"); //scissors
-        }};
-
         int sum = 0;
 
         for (String ln : content) {
@@ -64,25 +64,11 @@ public class Task2 {
                     };
                     break;
             }
-
         }
         System.out.println(sum);
     }
 
     private static void part2(List<String> content) {
-
-        HashMap<String, Integer> shapeVal = new HashMap<>() {{
-            put("X", 1); //rock
-            put("Y", 2); //paper
-            put("Z", 3); //scissors
-        }};
-
-        HashMap<String, String> comparer = new HashMap<>() {{
-            put("A", "X"); //rock
-            put("B", "Y"); //paper
-            put("C", "Z"); //scissors
-        }};
-
         int sum = 0;
 
         for (String ln : content) {
@@ -116,7 +102,6 @@ public class Task2 {
                     };
                     break;
             }
-
         }
         System.out.println(sum);
     }
