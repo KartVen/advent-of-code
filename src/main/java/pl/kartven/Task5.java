@@ -13,7 +13,7 @@ public class Task5 {
     private final static List<String[]> moves = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
-        List<String> content = Files.readAllLines(Path.of("src/main/resources/task5.txt"), StandardCharsets.UTF_8);
+        List<String> content = Files.readAllLines(Path.of(Resource.getPath("task5.txt")), StandardCharsets.UTF_8);
         boolean movement = false;
         for (String ln : content) {
             if (ln.equals("")) {

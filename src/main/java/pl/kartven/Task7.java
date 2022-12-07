@@ -10,7 +10,7 @@ public class Task7 {
     private static Map<String, Long> dirSize;
 
     public static void main(String[] args) throws IOException {
-        List<String> content = Files.readAllLines(Path.of("src/main/resources/task7.txt"), StandardCharsets.UTF_8);
+        List<String> content = Files.readAllLines(Path.of(Resource.getPath("task7.txt")), StandardCharsets.UTF_8);
         dirSize = new HashMap<>();
 
         Map<String, List<File>> structure = new HashMap<>();

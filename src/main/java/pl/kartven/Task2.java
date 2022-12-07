@@ -22,7 +22,7 @@ public class Task2 {
     }};
 
     public static void main(String[] args) throws IOException {
-        BufferedReader file = new BufferedReader(new FileReader("src/main/resources/task2.txt"));
+        BufferedReader file = new BufferedReader(new FileReader(Resource.getPath("task2.txt")));
         List<String> content = new ArrayList<>();
         String ln;
         while ((ln = file.readLine()) != null) content.add(ln);

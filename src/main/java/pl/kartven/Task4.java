@@ -19,7 +19,7 @@ public class Task4 {
     final static List<List<List<Integer>>> pairs = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
-        content = Files.readAllLines(Paths.get("src/main/resources/task4.txt"), StandardCharsets.UTF_8);
+        content = Files.readAllLines(Paths.get(Resource.getPath("task4.txt")), StandardCharsets.UTF_8);
         for (String ln : content) {
             List<List<Integer>> pair = Arrays.stream(ln.split(",")).map(
                     elf -> Arrays.stream(elf.split("-")).map(Integer::parseInt).toList()

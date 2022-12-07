@@ -8,7 +8,7 @@ import java.util.Collections;
 public class Task1 {
 
     public static void main(String[] args) throws IOException {
-        BufferedReader file = new BufferedReader(new FileReader("src/main/resources/task1.txt"));
+        BufferedReader file = new BufferedReader(new FileReader(Resource.getPath("task1.txt")));
 
         ArrayList<Integer> elfFeed = new ArrayList<>();
         ArrayList<Integer> summedElfFeed = new ArrayList<>();

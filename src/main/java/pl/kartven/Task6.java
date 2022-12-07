@@ -11,7 +11,7 @@ public class Task6 {
     private static String content;
 
     public static void main(String[] args) throws IOException {
-        content = Files.readAllLines(Path.of("src/main/resources/task6.txt"), StandardCharsets.UTF_8).get(0);
+        content = Files.readAllLines(Path.of(Resource.getPath("task6.txt")), StandardCharsets.UTF_8).get(0);
         part(4);
         part(14);
     }
