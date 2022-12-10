@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Task6 {
 
@@ -12,11 +13,12 @@ public class Task6 {
 
     public static void main(String[] args) throws IOException {
         content = Files.readAllLines(Path.of(Resource.getPath("task6.txt")), StandardCharsets.UTF_8).get(0);
-        part(4);
-        part(14);
+
+        System.out.println("Part 1: " + part(4));
+        System.out.println("Part 2: " + part(14));
     }
 
-    private static void part(int packetLen) {
+    private static String part(int packetLen) {
         Queue<Character> markers = new ArrayDeque<>();
         int counter = 0;
         for (char c : content.toCharArray()) {
@@ -27,7 +29,6 @@ public class Task6 {
             } else break;
             counter++;
         }
-        markers.forEach(System.out::print);
-        System.out.println(" " + counter);
+        return markers.stream().map(String::valueOf).collect(Collectors.joining()) + " " + counter;
     }
 }

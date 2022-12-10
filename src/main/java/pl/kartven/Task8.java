@@ -24,21 +24,21 @@ public class Task8 {
             grid.add(lnSplit);
         }
 
-        part1();
-        part2();
+        System.out.println("Part 1: " + part1());
+        System.out.println("Part 2: " + part2());
     }
 
-    private static void part1() {
+    private static int part1() {
         int unhiddenTree = gridSize[0] * 2 + gridSize[1] * 2 - 4;
         for (int y = 1; y < gridSize[0] - 1; y++) {
             for (int x = 1; x < gridSize[1] - 1; x++) {
                 if (!isHide(y, x)) unhiddenTree++;
             }
         }
-        System.out.println(unhiddenTree);
+        return unhiddenTree;
     }
 
-    private static void part2() {
+    private static int part2() {
         int scenicScore = 0;
         for (int y = 0; y < gridSize[0]; y++) {
             for (int x = 0; x < gridSize[1]; x++) {
@@ -46,7 +46,7 @@ public class Task8 {
                 if (currentScenicScore > scenicScore) scenicScore = currentScenicScore;
             }
         }
-        System.out.println(scenicScore);
+        return scenicScore;
     }
 
     private static boolean isHide(int y, int x) {

@@ -50,7 +50,8 @@ public class Task10 {
                 Picture.content.get(Picture.row).add('.');
             }
         }
-        System.out.println(signalStrength);
+        System.out.println("Part 1: " + signalStrength);
+        System.out.println("Part 2:");
         Picture.print();
     }
 

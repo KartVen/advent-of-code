@@ -27,13 +27,13 @@ public class Task2 {
         String ln;
         while ((ln = file.readLine()) != null) content.add(ln);
 
-        part1(content);
-        part2(content);
+        System.out.println("Part 1: " + part1(content));
+        System.out.println("Part 2: " + part2(content));
 
         file.close();
     }
 
-    private static void part1(List<String> content) {
+    private static int part1(List<String> content) {
         int sum = 0;
 
         for (String ln : content) {
@@ -65,10 +65,10 @@ public class Task2 {
                     break;
             }
         }
-        System.out.println(sum);
+        return sum;
     }
 
-    private static void part2(List<String> content) {
+    private static int part2(List<String> content) {
         int sum = 0;
 
         for (String ln : content) {
@@ -103,6 +103,6 @@ public class Task2 {
                     break;
             }
         }
-        System.out.println(sum);
+        return sum;
     }
 }

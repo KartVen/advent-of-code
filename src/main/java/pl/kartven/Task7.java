@@ -47,17 +47,17 @@ public class Task7 {
             }
         });
 
-        part1();
-        part2();
+        System.out.println("Part 1: " + part1());
+        System.out.println("Part 2: " + part2());
     }
 
-    private static void part1() {
-        System.out.println(dirSize.values().stream().filter(el -> el <= 100_000).mapToLong(el -> el).sum());
+    private static long part1() {
+        return dirSize.values().stream().filter(el -> el <= 100_000).mapToLong(el -> el).sum();
     }
 
-    private static void part2() {
+    private static Long part2() {
         Long neededSize = 30000000 - (70_000_000 - dirSize.get(""));
-        System.out.println(dirSize.values().stream().filter(el -> el >= neededSize).min(Long::compare).orElse(0L));
+        return dirSize.values().stream().filter(el -> el >= neededSize).min(Long::compare).orElse(0L);
     }
 
     private static class File {

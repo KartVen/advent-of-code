@@ -11,14 +11,14 @@ public class Task3 {
         List<String> content = new ArrayList<>();
         String ln; while ((ln = file.readLine()) != null) content.add(ln);
 
-        part1(content);
-        part2(content);
+        System.out.println("Part 1: " + part1(content));
+        System.out.println("Part 2: " + part2(content));
 
         file.close();
     }
 
 
-    private static void part1(List<String> content) {
+    private static int part1(List<String> content) {
 
         int summedPrior = 0;
 
@@ -36,10 +36,10 @@ public class Task3 {
                 }
             }
         }
-        System.out.println(summedPrior);
+        return summedPrior;
     }
 
-    private static void part2(List<String> content) {
+    private static int part2(List<String> content) {
 
         int summedPrior = 0;
         List<Set<Character>> rugsackGroup = new ArrayList<>();
@@ -65,6 +65,6 @@ public class Task3 {
                 rugsackGroup.clear();
             }
         }
-        System.out.println(summedPrior);
+        return summedPrior;
     }
 }

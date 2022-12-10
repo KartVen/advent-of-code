@@ -14,10 +14,10 @@ public class Task9 {
     public static void main(String[] args) throws IOException {
         content = Files.readAllLines(Path.of(Resource.getPath("task9.txt")), StandardCharsets.UTF_8);
 
-        part(1);
-        part(9);
+        System.out.println("Part 1: " + part(1));
+        System.out.println("Part 2: " + part(9));
     }
-    private static void part(int knots) {
+    private static int part(int knots) {
         Rope rope = new Rope(knots);
 
         for (String ln : content) {
@@ -57,7 +57,7 @@ public class Task9 {
                 rope.saveTail();
             }
         }
-        System.out.println(rope.tailPositions.size());
+        return rope.tailPositions.size();
     }
 
     private static class Rope {

@@ -27,12 +27,12 @@ public class Task4 {
             pairs.add(pair);
         }
 
-        part1();
-        part2();
+        System.out.println("Part 1: " + part1());
+        System.out.println("Part 2: " + part2());
     }
 
 
-    private static void part1() {
+    private static int part1() {
         int counter = 0;
 
         for (List<List<Integer>> pair : pairs) {
@@ -44,10 +44,10 @@ public class Task4 {
             else if (checkInclude.apply(1, 0)) counter++;
 
         }
-        System.out.println(counter);
+        return counter;
     }
 
-    private static void part2() {
+    private static int part2() {
         int counter = 0;
 
         for (List<List<Integer>> pair : pairs) {
@@ -65,6 +65,6 @@ public class Task4 {
                 }
             }
         }
-        System.out.println(counter);
+        return counter;
     }
 }

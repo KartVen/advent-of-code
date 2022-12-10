@@ -29,11 +29,11 @@ public class Task5 {
                     }
             } else moves.add(ln.split(" "));
         }
-        part1();
-        part2();
+        System.out.println("Part 1: " + part1());
+        System.out.println("Part 2: " + part2());
     }
 
-    private static void part1() {
+    private static StringBuilder part1() {
         List<ArrayList<Character>> stacksCopy = stacks.stream().map(ArrayList::new).toList();
 
         for (String[] move : moves)
@@ -44,10 +44,10 @@ public class Task5 {
 
         StringBuilder topOfStacks = new StringBuilder();
         for (List<Character> stack : stacksCopy) topOfStacks.append(stack.get(stack.size() - 1));
-        System.out.println(topOfStacks);
+        return topOfStacks;
     }
 
-    private static void part2() {
+    private static StringBuilder part2() {
         List<ArrayList<Character>> stacksCopy = stacks.stream().map(ArrayList::new).toList();
 
         for (String[] move : moves)
@@ -58,6 +58,6 @@ public class Task5 {
 
         StringBuilder topOfStacks = new StringBuilder();
         for (List<Character> stack : stacksCopy) topOfStacks.append(stack.get(stack.size() - 1));
-        System.out.println(topOfStacks);
+        return topOfStacks;
     }
 }
